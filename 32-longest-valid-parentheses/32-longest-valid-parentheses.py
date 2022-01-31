@@ -11,6 +11,6 @@ class Solution:
                 if not stack:
                     stack.append(i)
                 else:
-                    max_value = max(max_value, (i - stack[len(stack) - 1]))
+                    max_value = max(max_value, (i - stack[- 1]))
         return max_value
-            
+              
