@@ -14,8 +14,6 @@ class Solution:
                     if c == ')':
                         stack.append((idx, c))
                         stack.append((i, ch))
-        print(stack)
-        
         while len(stack):
             i, curr = stack.pop()
             s.pop(i)
