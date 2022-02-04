@@ -1,9 +1,9 @@
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
-        mapping = {0: 0}
+        mapping = {0: -1}
         max_length = 0
         count = 0
-        for i, num in enumerate(nums, 1):
+        for i, num in enumerate(nums):
             if num == 0:
                 count -= 1
             else:
