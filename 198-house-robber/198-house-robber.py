@@ -1,17 +1,13 @@
 class Solution:
-    def __init__(self):
-        self.memo ={}
-    
+
     def rob(self, nums: List[int]) -> int:
-        self.memo = {}
+        table = [None for _ in range(len(nums) + 1)]
         
-        return self.robFrom(0, nums)
-    
-    def robFrom(self, i, nums):
-        if i >= len(nums):
-            return 0
-        if i in self.memo:
-            return self.memo[i]
-        max_val = max(self.robFrom(i+1, nums), self.robFrom(i+2, nums) + nums[i])
-        self.memo[i] = max_val
-        return max_val
+        n = len(nums)
+        
+        table[n] = 0
+        table[n-1]= nums[n-1]
+        ans = 0
+        for i in range(n-2,-1,-1):
+            table[i] = max(table[i+1], table[i+2] + nums[i])
+        return table[0]
