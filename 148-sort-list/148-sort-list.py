@@ -27,7 +27,6 @@ class Solution:
         curr.next = l or r
         return temp.next
        
-        
     
     def getMid(self,node):
         slow = node
